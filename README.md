@@ -4,10 +4,11 @@ Playwright automation tests for Automation Exercise using TypeScript.
 This Automation Testing is to focuses on creating, running, and managing tests from a QA perspective:
 This repository is designed for automated testing of [Automation Exercise](https://automationexercise.com) using **Playwright** and **TypeScript**. As part of the QA process, this project emphasizes test coverage for critical workflows such as:
 
-> Authentication
-> Product
-> Search Cart Operations
-> Responsive UI Validation.
+
+- Authentication
+- Product
+- Search Cart Operations
+- Responsive UI Validation.
 
 ## Purpose of the Project
 
