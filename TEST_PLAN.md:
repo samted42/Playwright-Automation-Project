@@ -1,0 +1,192 @@
+## 12. Summary
+
+This test plan aims to ensure high-quality automation delivery for the Automation Exercise website. 
+It defines a structured approach covering functional testing, cross-browser testing, test data, and reporting..
+
+
+# Test Plan for AutomationExercise Automation Testing
+
+This document outlines the test plan for automating the [Automation Exercise](https://automationexercise.com) website using **Playwright** and **TypeScript**. The purpose of this plan is to ensure comprehensive test coverage, efficient defect detection, and validation of critical workflows.
+
+---
+
+## 1. Objectives
+
+- Automate the testing of key features on the Automation Exercise website.
+- Validate the functionality, responsiveness, and performance of the site.
+- Ensure test scenarios cover cross-browser and cross-device compatibility.
+- Provide regression testing to detect issues introduced during development updates.
+
+---
+
+## 2. Scope
+
+### **In-Scope**
+1. **Functional Testing**:
+   - Login and Signup workflows.
+   - Product search and filtering.
+   - Cart and checkout processes.
+   - Navigation and general UI testing.
+
+2. **Cross-Browser Testing**:
+   - Chrome (Chromium), Firefox, and WebKit browsers.
+
+3. **Responsive Design Testing**:
+   - Desktop (1920x1080)
+   - Tablet (768x1024)
+   - Mobile (375x667)
+
+4. **Regression Testing**:
+   - Re-run automated tests to ensure no existing features break after code changes.
+
+### **Out of Scope**
+- Backend/API testing (as this focuses on UI automation).
+- Load or performance testing.
+
+---
+
+## 3. Test Strategy
+
+### 3.1 Automation Framework
+The testing framework will use **Playwright** in combination with **TypeScript** for building scalable, efficient, and reliable test cases.
+
+### 3.2 Tools and Technologies
+- **Automation Tool**: Playwright
+- **Programming Language**: TypeScript
+- **IDE**: Visual Studio Code
+- **Version Control**: GitHub
+- **CI/CD**: GitHub Actions for automated testing on commits and pull requests.
+
+### 3.3 Test Environment
+- Website Under Test (WUT): [https://automationexercise.com](https://automationexercise.com)
+- Environment: Production site
+- Browser Versions: Latest versions of supported browsers.
+
+---
+
+## 4. Test Scenarios
+
+### 4.1 Functional Areas
+| **Feature**         | **Test Cases**                                                                                  |
+|----------------------|-----------------------------------------------------------------------------------------------|
+| **Login**           | - Verify valid login<br> - Verify invalid login<br> - Empty fields validation                  |
+| **Signup**          | - Verify user registration with valid and invalid data<br> - Duplicate user creation validation|
+| **Search**          | - Search for existing products<br> - Search for non-existing products                         |
+| **Cart Operations** | - Add product to cart<br> - Update product quantity<br> - Remove product                      |
+| **Checkout**        | - Verify end-to-end checkout with valid details<br> - Invalid payment validation              |
+| **Navigation**      | - Validate all navigation menu items                                                         |
+| **Responsive Testing** | - Test UI components on different device sizes (desktop, tablet, mobile)                  |
+
+### 4.2 Bug Classification
+- **Critical Bugs**: Features blocking user workflows such as login, signup, or checkout failures.
+- **High Priority Bugs**: Issues impacting core functionality but with available workarounds.
+- **Low Priority Bugs**: Minor UI inconsistencies that do not affect usability.
+
+---
+
+## 5. Test Automation Framework Details
+
+### 5.1 Framework Features
+- **Playwright** for cross-browser and cross-device testing.
+- Modular structure for maintaining reusable components across tests.
+- Support for parallel and sequential test execution.
+- Detailed HTML and JSON-based reporting using Playwright's built-in reporters.
+
+### 5.2 Framework Structure
+```
+├── tests/
+│   ├── login.spec.ts       # Login workflow tests
+│   ├── signup.spec.ts      # Signup workflow tests
+│   ├── cart.spec.ts        # Cart operation tests
+│   ├── ...
+├── playwright.config.ts    # Configuration file for Playwright
+├── package.json            # NPM dependencies and scripts
+├── tsconfig.json           # TypeScript configuration
+├── .github/workflows/      # GitHub Actions for CI/CD pipeline
+```
+
+---
+
+## 6. Test Data
+
+### 6.1 Test Users
+- **Valid Credentials**:
+  - Email: `testuser@example.com`
+  - Password: `password123`
+- **Invalid Credentials**:
+  - Email: `invaliduser@example.com`
+  - Password: `wrongpassword`
+
+### 6.2 Product/Cart Data
+- **Product Names**: e.g., "Green T-shirt", "Red Skirt"
+- **Categories**: "Men's Clothing", "Women's Clothing", "Accessories"
+
+---
+
+## 7. Execution Plan
+
+### 7.1 Test Execution
+Tests are automated and will run using **Playwright**. The following modes of execution are planned:
+- **Local Execution**: For developing and debugging tests.
+- **GitHub Actions**: Automate test execution on commits and pull requests.
+
+### 7.2 Test Execution Schedule
+| **Execution Frequency** | **Test Type**                                                                             |
+|--------------------------|-----------------------------------------------------------------------------------------|
+| On every code commit     | Run regression tests for modified areas                                                |
+| Nightly                  | Run all test cases across all browsers for full regression coverage                     |
+
+---
+
+## 8. Reporting and Metrics
+
+### 8.1 Test Reports
+Playwright allows generating detailed HTML reports for test executions. All reports will capture:
+- Test case result (pass/fail)
+- Screenshots and videos of failed tests
+- Error logs, if applicable
+
+Reports can be generated using:
+```bash
+npx playwright show-report
+```
+
+### 8.2 Metrics for Evaluation
+- Percentage of tests passing.
+- Number of critical defects detected.
+- Time taken for each test suite.
+- Device/browser compatibility statistics.
+
+---
+
+## 9. Defect Management
+
+Defects will be logged into GitHub Issues, with the following fields:
+- Title
+- Description of the defect
+- Steps to reproduce
+- Expected vs actual behavior
+- Severity
+
+---
+
+## 10. Risks and Dependencies
+
+### Risks
+- Frequent updates to the site under test may require test maintenance.
+- Browser compatibility issues in new versions may interrupt workflows.
+
+### Dependencies
+- Availability of browsers and necessary dependencies for Playwright.
+- Internet connectivity for accessing the site during execution.
+
+---
+
+## 11. Approval Criteria
+
+Test execution is considered successful if:
+- All critical and high priority tests pass.
+- No critical or blocker defects remain unresolved.
+- All regression tests produce consistent results.
+
+---
