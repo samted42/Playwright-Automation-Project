@@ -1,5 +1,6 @@
 # Playwright-Automation-Project
-Playwright automation tests for Automation Exercise using TypeScript
+Playwright automation tests for Automation Exercise using TypeScript.
+
 As a Test Analyst, here's an updated context-specific version of the README.md, reflecting both your responsibilities and VSCode utilization. This focuses on creating, running, and managing tests from a QA perspective:
 This repository is designed for automated testing of [Automation Exercise](https://automationexercise.com) using **Playwright** and **TypeScript**. As part of the QA process, this project emphasizes test coverage for critical workflows such as:
 > Authentication
