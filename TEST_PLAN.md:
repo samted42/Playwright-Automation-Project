@@ -7,7 +7,7 @@ It defines a structured approach covering functional testing, cross-browser test
 
 This document outlines the test plan for automating the [Automation Exercise](https://automationexercise.com) website using **Playwright** and **TypeScript**. The purpose of this plan is to ensure comprehensive test coverage, efficient defect detection, and validation of critical workflows.
 
----
+
 
 ## 1. Objectives
 
